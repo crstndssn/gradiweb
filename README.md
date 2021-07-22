@@ -1,4 +1,4 @@
-# Waether App para Gradiweb ☀️
+# Weather App para Gradiweb ☀️
 
 Este proyecto fue creado con create-react-app, tailwindcss y firebase
 

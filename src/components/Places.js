@@ -7,12 +7,11 @@ import { PlusSmIcon } from '@heroicons/react/solid'
 const Places = () => {
 
     return (
-        <div className="md:col-span-4 xs:col-span-9 md:ml-7 xs:ml-0">
+        <div className="xl:col-span-4 md:col-span-5 sm:col-span-9 xs:col-span-9 xl:ml-7 md:ml-3 xs:ml-0 md:mt-0 xs:mt-5">
             <div>
-
-                <div className="flex justify-between items-center mb-10">
-                    <h1 className="text-3xl w-1/2"><span className="font-semibold">Place to</span> Visit</h1>
-                    <div className="w-1/2 flex justify-between items-start">
+                <div className="flex justify-between items-center md:flex-row xs:flex-col md:mb-10 xs:mb-5">
+                    <h1 className="text-3xl md:w-1/2 xs:w-full"><span className="font-semibold">Place to</span> Visit</h1>
+                    <div className="md:w-1/2 xs:w-full flex justify-between items-start md:my-0 xs:my-3">
                         <div className="flex justify-center items-center font-medium text-gray-400 mt-2">
                             <PlusSmIcon className="w-7" />
                             <p>Top Reviews</p>
@@ -37,7 +36,7 @@ const Places = () => {
 
                 <div>
 
-                    <div className="grid md:grid-cols-2 min-h-35 gap-7">
+                    <div className="grid xl:grid-cols-2 xl:min-h-35 md:min-h-90 xs:min-h-90 gap-7">
 
                         <div className="relative rounded-4xl py-5 px-3 overflow-hidden">
 
@@ -57,7 +56,7 @@ const Places = () => {
 
                         </div>
 
-                        <div className="grid grid-rows-3 gap-7">
+                        <div className="grid md:grid-rows-3 gap-7">
 
 
                             <div className="row-span-1 relative rounded-4xl py-5 px-3 overflow-hidden">
@@ -81,12 +80,12 @@ const Places = () => {
 
                             <div className="border row-span-2 flex justify-between relative rounded-l-4xl rounded-r-7xl overflow-hidden">
 
-                                <div className="flex justify-between">
+                                <div className="w-full flex justify-between">
 
                                     {/* description  */}
                                     <div className="flex items-start text-white mt-5 px-3">
                                         <LocationMarkerIcon className="w-8 mr-2 z-10" />
-                                        <div className="flex flex-col z-10">
+                                        <div className="flex flex-col z-10 mt-2">
                                             <h2 className="font-medium leading-none">Fountain of Youth</h2>
                                         </div>
                                     </div>

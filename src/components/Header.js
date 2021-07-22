@@ -12,12 +12,12 @@ const Header = () => {
                 <img src="https://images.pexels.com/photos/3029037/pexels-photo-3029037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Bogotá" />
             </div>
 
-            <div className="absolute top-20 left-20 w-2/3 flex justify-center items-start flex-col">
+            <div className="absolute md:top-20 xs:top-5 md:left-20 xs:left-0 w-2/3 flex justify-center items-start flex-col">
                 <div className="flex ml-12">
-                    <LocationMarkerIcon className="w-10 mr-2 text-primary" />
-                    <p className="text-4xl text-primary font-medium">Bogotá</p>
+                    <LocationMarkerIcon className="md:w-10 md:h-10 xs:h-6 xs:w-6  md:mr-2 xs:mr-1 text-primary" />
+                    <p className="md:text-4xl xs:text-2xl text-primary font-medium">Bogotá</p>
                 </div>
-                <img src={map} alt="map" className="w-64 mt-10 ml-32" />
+                <img src={map} alt="map" className="md:w-40 md:h-40 xs:w-20 xs:h-20 md:ml-32 xs:ml-10" />
             </div>
 
         </div>

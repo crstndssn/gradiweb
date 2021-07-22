@@ -14,14 +14,13 @@ const Weather = () => {
 
     new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://api.openweathermap.org/data/2.5/weather?q=Bogota&appid=07e4d16ee059a4496fa014740a11d9bf', true);
+        xhr.open('get', 'https://api.openweathermap.org/data/2.5/weather?q=Bogota&appid=e6a752303097b93902668cb50caa218d', true);
         xhr.onload = function () {
             var status = xhr.status;
             if (status === 200) {
                 resolve(xhr.responseText);
                 var myArr = JSON.parse(xhr.responseText);
                 var mainWeather = myArr.weather[0].main
-                console.log(myArr)
                 setSky(mainWeather)
                 var tempBog = parseInt(myArr.main.temp - (273.55))
                 setTemp(tempBog)

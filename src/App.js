@@ -14,7 +14,7 @@ const App = () => {
         <Header />
         <div className="grid grid-cols-9">
           <Forecast />
-          <Places />
+          <Places /> 
           <Locations />
         </div>
       </div>

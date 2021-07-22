@@ -20,7 +20,7 @@ const Paris = () => {
 
     new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=8443dc843b3a73264c078189a005b10f', true);
+        xhr.open('get', 'https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=e6a752303097b93902668cb50caa218d', true);
         xhr.onload = function () {
             var status = xhr.status;
             if (status === 200) {

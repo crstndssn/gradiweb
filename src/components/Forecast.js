@@ -6,11 +6,6 @@ import cloudy from '../resources/cloudy.svg'
 
 const Forecast = () => {
 
-    const [temp, setTemp] = useState(0);
-    const [sky, setSky] = useState('')
-    const [iconWeather, setIconWeather] = useState('')
-    const [descriptionWeather, setDescriptionWeather] = useState('')
-
     // SET NAME DAYS
     const [dayOne, setDayOne] = useState()
     const [dayTwo, setDayTwo] = useState()
@@ -38,15 +33,12 @@ const Forecast = () => {
 
     new Promise(function (resolve, reject) {
         var xhr = new XMLHttpRequest();
-        xhr.open('get', 'https://api.openweathermap.org/data/2.5/forecast?q=Bogota&appid=07e4d16ee059a4496fa014740a11d9bf', true);
+        xhr.open('get', 'https://api.openweathermap.org/data/2.5/forecast?q=Bogota&appid=f1342724d14792644897eb71955def8c', true);
         xhr.onload = function () {
             var status = xhr.status;
             if (status === 200) {
                 resolve(xhr.responseText);
                 var myArr = JSON.parse(xhr.responseText);
-                console.log(myArr)
-
-
 
                 // SET DAYS
 
@@ -72,19 +64,16 @@ const Forecast = () => {
                 // STATE
 
                 // day 1
-                var timestampDay1 = timestamp
+                var timestampDay1 = timestamp + 86400
                 var arrayDays = myArr.list
                 const result1 = arrayDays.find(day => day.dt === timestampDay1)
-                console.log(result1.weather[0].main)
                 var stateDay1 = result1.weather[0].main
                 setStateDayOne(stateDay1)
 
                 // day 2
                 var timestampDay2 = timestamp + 172800
-                console.log(timestampDay2)
                 var arrayDays = myArr.list
                 const result2 = arrayDays.find(day => day.dt === timestampDay2)
-                console.log(result2.weather[0].main)
                 var stateDay2 = result2.weather[0].main
                 setStateDayTwo(stateDay2)
 
@@ -93,7 +82,6 @@ const Forecast = () => {
                 var timestampDay3 = timestamp + 259200
                 var arrayDays = myArr.list
                 const result3 = arrayDays.find(day => day.dt === timestampDay3)
-                console.log(result3.weather[0].main)
                 var stateDay3 = result3.weather[0].main
                 setStateDayThree(stateDay3)
 
@@ -129,57 +117,45 @@ const Forecast = () => {
                 switch (stateDayOne) {
                     case 'Clouds':
                         setIconDayOne(cloudy)
-                        setDescriptionWeather('Cloudy')
                         break
                     case 'Clear':
                         setIconDayOne(sun)
-                        setDescriptionWeather('Clear')
                         break;
                     case 'Drizzle':
                         setIconDayOne(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                     case 'Rain':
                         setIconDayOne(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                 }
                 
                 switch (stateDayTwo) {
                     case 'Clouds':
                         setIconDayTwo(cloudy)
-                        setDescriptionWeather('Cloudy')
                         break
                     case 'Clear':
                         setIconDayTwo(sun)
-                        setDescriptionWeather('Clear')
                         break;
                     case 'Drizzle':
                         setIconDayTwo(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                     case 'Rain':
                         setIconDayTwo(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                 }
                
                 switch (stateDayThree) {
                     case 'Clouds':
                         setIconDayThree(cloudy)
-                        setDescriptionWeather('Cloudy')
                         break
                     case 'Clear':
                         setIconDayThree(sun)
-                        setDescriptionWeather('Clear')
                         break;
                     case 'Drizzle':
                         setIconDayThree(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                     case 'Rain':
                         setIconDayThree(rain)
-                        setDescriptionWeather('Drizzle')
                         break;
                 }
 
@@ -188,6 +164,7 @@ const Forecast = () => {
             }
         };
         xhr.send();
+        
     });
 
     return (
